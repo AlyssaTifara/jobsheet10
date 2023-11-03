@@ -6,7 +6,7 @@ public class BioskopWithScanner03{
         Scanner input2 = new Scanner(System.in);
 
         String nama, next;
-        int baris, kolom,menu;
+        int baris, kolom, menu;
         boolean exit;
 
         String [][] penonton = new String[4][2];
@@ -29,13 +29,25 @@ public class BioskopWithScanner03{
             baris = input1.nextInt();
             System.out.println("Kolom : ");
             kolom = input1.nextInt();
-            penonton [baris-1] [kolom-1] = namaPenonton;
+
+            input1.nextLine();
+
+            if (penonton [baris-1] [kolom-1] == null){
+                penonton [baris-1] [kolom-1] = namaPenonton;
+            } else {
+                System.out.println("Mohon maaf tempat duduk tidak tersedia sayang");
+                System.out.println("Silahkan masukkan tempat lainnya");
+                System.out.println("Pilih baris tempat duduk yang anda inginkan");
+                baris = input1.nextInt();
+                System.err.println("Kolom: ");
+                kolom = input1.nextInt();
+            }
         } else if (pilihan == 2){
             for (int i = 0; i < penonton.length; i++){
                 System.out.println("Pada baris ke- " +(i+1) + " : "+penonton[i][0] +", "+penonton[i][1]);
             }
         } else if (pilihan == 3){
-            System.out.println("Terimakasih telah memilih jasa kami");
+            System.out.println("Terimakasih telah memilih jasa kami maniez");
             break;
         }
         }
