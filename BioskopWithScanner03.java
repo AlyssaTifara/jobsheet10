@@ -31,7 +31,6 @@ public class BioskopWithScanner03{
             kolom = input1.nextInt();
 
             input1.nextLine();
-
             if (penonton [baris-1] [kolom-1] == null){
                 penonton [baris-1] [kolom-1] = namaPenonton;
             } else {
@@ -44,6 +43,14 @@ public class BioskopWithScanner03{
             }
         } else if (pilihan == 2){
             for (int i = 0; i < penonton.length; i++){
+                if (penonton[i] == null) {
+                    penonton[i] = new String[penonton[i].length];
+                }
+                for (int j = 0; j < penonton[i].length; j++){
+                    if (penonton[i][j] == null){
+                        penonton[i][j] = "***";
+                    }
+                }
                 System.out.println("Pada baris ke- " +(i+1) + " : "+penonton[i][0] +", "+penonton[i][1]);
             }
         } else if (pilihan == 3){
